@@ -3,7 +3,7 @@ package Quizzy;
 
 import java.util.ArrayList;
 
-public class Question extends Throwable {
+public class Question {
 
     private String questionText;
 
@@ -13,12 +13,6 @@ public class Question extends Throwable {
 
     public ArrayList<Alternative> getAlternatives() {
         return alternatives;
-    }
-
-    public static void setAlternatives() {
-    }
-
-    public static void setQuestionText() {
     }
 
     public void setAlternatives(ArrayList<Alternative> alternatives) {
@@ -51,5 +45,4 @@ public class Question extends Throwable {
     public void setCorrectAlternative(Alternative i_correctAlternative) {
         this.correctAlternative = i_correctAlternative;
     }
-
 }

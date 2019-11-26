@@ -17,6 +17,4 @@ public class Alternative {
     public void setAlternativeText(String alternativeText) {
         this.alternativeText = alternativeText;
     }
-
-
 }
