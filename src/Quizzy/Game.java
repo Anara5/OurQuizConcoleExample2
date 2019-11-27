@@ -1,20 +1,36 @@
 package Quizzy;
-
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Game extends Main{
 
     private Player player;
     private ArrayList<Question> questionList;
     private int finalScore;
-    private String date;
+    private Date finalDate;
+    private SimpleDateFormat formatter;
 
-    public Game(Player player, String date, ArrayList<Question> questionList) {
-
+    public Game(Player player, ArrayList<Question> questionList) {
+        super();
         this.player = player;
         this.questionList = new ArrayList<>();
         this.finalScore = 0;
-        this.date = date;
+        this.finalDate= new Date();
+        this.formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        printDate(this.finalDate);
+    }
+
+    public Game() {
+        return;
+    }
+
+    private void printDate(Date date) {
+        System.out.println(formatter.format(date));
+    }
+    public void printFinalDate(){
+        this.finalDate=new Date();
+        System.out.println(formatter.format(finalDate));
     }
 
     ArrayList<Question> getQuestionList() {
@@ -41,12 +57,5 @@ public class Game extends Main{
     }
     public void setFinalScore(int finalScore) {
         this.finalScore = finalScore;
-    }
-
-    public String getDate() {
-        return date;
-    }
-    public void setDate(String date) {
-        this.date = date;
     }
 }

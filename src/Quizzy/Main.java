@@ -6,9 +6,13 @@ import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Main {
-
     private Scanner scanner;
     private static PlayerStorage players;
+
+    public Main() {
+        this.scanner=scanner;
+        this.players = new PlayerStorage();
+    }
 
     public static void main(String[] args) {
 
@@ -32,7 +36,8 @@ public class Main {
                     new Story(); //the Quiz Story and Rules Text pops up
                     break;
                 case 2:
-                    new Main(); //Quiz pops up
+                    new Game();
+                    //Quiz pops up
                     PlayerStorage players = new PlayerStorage();
                     Scanner scanner = new Scanner(System.in);
                     while (true) {
@@ -64,7 +69,7 @@ public class Main {
 
                                                     // Set up the quiz
                                                     ArrayList<Question> questions = new ArrayList<>();
-                                                    Game game = new Game(player, "2019-11-25", questions);
+                                                    Game game = new Game(player, questions);
                                                     Question q1 = new Question("What is the capital of Sweden?");
                                                     Alternative a1 = new Alternative("Stockholm");
                                                     Alternative a2 = new Alternative("Oslo");
@@ -163,12 +168,12 @@ public class Main {
                         }
                     }
 
-                    case 3:
-                        System.out.println("----------"); //The session is finished in total
-                        break;
-                    default:
-                        System.out.println("The choice is invalid"); //if we press invalid button
-                        break;
+                case 3:
+                    System.out.println("----------"); //The session is finished in total
+                    break;
+                default:
+                    System.out.println("The choice is invalid"); //if we press invalid button
+                    break;
             }
 
         } while (choice != 3); // the main menu frame reopens when the sessions finish after the end of each case
